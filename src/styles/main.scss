@@ -11,26 +11,30 @@ html {
 }
 
 h3,
-div,
 body,
 p {
   margin: 0;
 }
 
 .main {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, $card-width);
+  gap: 50px 48px;
+  align-content: center;
   justify-content: center;
 
-  margin: 50px auto 0;
+  margin: 50px auto;
   max-width: 1024px;
-  &__card {
-    margin: 0 24px 50px;
-  }
 }
 
 @media screen and (max-width: 950px) {
   .navigation__list {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(auto-fit, $card-width);
   }
 }
