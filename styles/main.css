@@ -185,24 +185,21 @@ html {
   font-family: Roboto, Arial, sans-serif; }
 
 h3,
-div,
 body,
 p {
   margin: 0; }
 
 .main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 50px 48px;
+  -ms-flex-line-pack: center;
+      align-content: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 50px auto 0;
+  margin: 50px auto;
   max-width: 1024px; }
-  .main__card {
-    margin: 0 24px 50px; }
 
 @media screen and (max-width: 950px) {
   .navigation__list {
@@ -210,5 +207,9 @@ p {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column; } }
+
+@media (max-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(auto-fit, 200px); } }
 
 /*# sourceMappingURL=main.css.map */
